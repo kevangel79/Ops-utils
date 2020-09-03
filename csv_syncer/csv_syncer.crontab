@@ -1,0 +1,1 @@
+*/5 * * * * /usr/bin/python3 /root/csv_syncer/csv_syncer.py >> /root/csv_syncer/listener.log 2>&1
