@@ -25,3 +25,4 @@ rm /home/postgres/backup_icinga_db_${DATE}.bak
 
 # Copy files to Archive server (Read script bellow for more information)
 /root/utils/rSyncBackups.sh -u root -r snf-11813.ok-kno.grnetcloud.net -k ~/.ssh/id_rsa -f /var/backup_db/backup_icinga_db_${DATE}.tar.gz -t /home/backups/icinga
+rm /var/backup_db/backup_icinga_db_${DATE}.tar.gz
