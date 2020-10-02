@@ -9,8 +9,11 @@ mkdir -p ${TEMP_DIR}
 cd /home/postgres
 sudo -u postgres pg_dumpall > /home/postgres/backup_icinga_db_${DATE}.bak
 
-# Copy NextCloud files to backup directory
+# Copy files to backup directory
 cp /home/postgres/backup_icinga_db_${DATE}.bak ${TEMP_DIR}
+rsync -aRv /var/lib/icinga2 ${TEMP_DIR}
+rsync -aRv /etc/icinga2 ${TEMP_DIR}
+rsync -aRv /etc/icingaweb2 ${TEMP_DIR}
 
 # Create a tarball with the backup
 cd /var/backup_db/
